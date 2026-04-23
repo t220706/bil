@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bento-bg: #0B1221;
+  --color-bento-surface: #151E31;
+  --color-bento-border: #2D3748;
+  --color-bento-accent: #3B82F6;
+  --color-bento-muted: #94A3B8;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-white bg-bento-bg font-sans;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-bento-surface border border-bento-border rounded-[2rem] transition-all duration-300;
+  }
+  
+  .bento-gradient {
+    @apply bg-gradient-to-br from-[#1E293B] to-[#0F172A];
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
