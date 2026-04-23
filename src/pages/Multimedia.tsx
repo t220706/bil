@@ -1,53 +1,114 @@
-import React from 'react';
-import { Play, Podcast, Headphones, Video, Clock, Share2, Heart, Search, Users } from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { Play, Podcast, Headphones, Video, Clock, Share2, Heart, Search, Users, X, ChevronLeft } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const MEDIA_CONTENT = [
   {
     id: '1',
-    title: 'Tóm tắt Sapiens: Lược sử loài người',
-    author: 'BookVerse Studio',
-    duration: '15:20',
-    type: 'podcast',
-    category: 'Lịch sử',
-    thumbnail: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=600&h=400&fit=crop',
-    plays: '12k'
+    title: '10 Cuốn sách thay đổi cuộc đời',
+    author: 'Ali Abdaal',
+    duration: '18:20',
+    type: 'video',
+    category: 'Phát triển bản thân',
+    thumbnail: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=500&fit=crop',
+    videoId: 'WvjS41tqZ98',
+    plays: '8.4M'
   },
   {
     id: '2',
-    title: 'Phân tích tâm lý nhân vật Chí Phèo',
-    author: 'Văn học Review',
-    duration: '22:45',
+    title: 'Tại sao bạn nên đọc "Tội ác và Hình phạt"?',
+    author: 'TED-Ed',
+    duration: '04:50',
     type: 'video',
-    category: 'Văn học VN',
-    thumbnail: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=400&fit=crop',
-    plays: '8.5k'
+    category: 'Văn học Kinh điển',
+    thumbnail: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&h=500&fit=crop',
+    videoId: '7FDN4eCokj4',
+    plays: '4.2M'
   },
   {
     id: '3',
-    title: 'Kỹ năng đọc nhanh & ghi nhớ sâu',
-    author: 'LevelUp Reading',
-    duration: '10:15',
+    title: 'Sự nguy hiểm của góc nhìn phiến diện',
+    author: 'TED Talks',
+    duration: '19:16',
     type: 'video',
-    category: 'Kỹ năng',
-    thumbnail: 'https://images.unsplash.com/photo-1521056787327-165dc2a32836?w=600&h=400&fit=crop',
-    plays: '25k'
+    category: 'Xã hội',
+    thumbnail: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=500&fit=crop',
+    videoId: 'D9Ihs241zeg',
+    plays: '35M'
   },
   {
     id: '4',
-    title: 'Bí mật của hạnh phúc - The Little Book of Hygge',
-    author: 'Chill with Books',
-    duration: '45:00',
-    type: 'podcast',
-    category: 'Lối sống',
-    thumbnail: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&h=400&fit=crop',
-    plays: '5.2k'
+    title: 'Giải mã "Trăm năm cô đơn"',
+    author: 'TED-Ed',
+    duration: '05:22',
+    type: 'video',
+    category: 'Văn học Kinh điển',
+    thumbnail: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=500&fit=crop',
+    videoId: 'B1qX0O_eZVE',
+    plays: '2.1M'
   }
 ];
 
 export default function Multimedia() {
+  const [activeMedia, setActiveMedia] = useState<any | null>(null);
+
   return (
-    <div className="p-6 space-y-8 max-w-[1600px] mx-auto min-h-screen">
+    <div className="p-6 space-y-8 max-w-[1600px] mx-auto min-h-screen relative">
+      <AnimatePresence>
+        {activeMedia && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+            <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0 }}
+               onClick={() => setActiveMedia(null)}
+               className="absolute inset-0 bg-black/90 backdrop-blur-md"
+            />
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.95, y: 20 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.95, y: 20 }}
+               className="relative w-full max-w-5xl aspect-video bg-black rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 flex items-center justify-center group"
+            >
+               <button onClick={() => setActiveMedia(null)} className="absolute top-6 right-6 z-50 p-3 bg-black/50 text-white rounded-full hover:bg-red-500 transition-colors backdrop-blur-md shadow-2xl border border-white/10">
+                 <X className="w-6 h-6" />
+               </button>
+               
+               {activeMedia.videoId ? (
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src={`https://www.youtube.com/embed/${activeMedia.videoId}?autoplay=1`} 
+                    title={activeMedia.title}
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen
+                    className="absolute inset-0 bg-black z-40"
+                  ></iframe>
+               ) : (
+                 <>
+                   <img src={activeMedia.thumbnail} className="absolute inset-0 w-full h-full object-cover opacity-50 blur-sm" alt="blur-bg" />
+                   <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                      <Play className="w-24 h-24 text-white fill-white mb-8 opacity-80 hover:opacity-100 cursor-pointer hover:scale-110 transition-all drop-shadow-2xl" />
+                      <h2 className="text-3xl lg:text-5xl font-black text-white px-4 text-center italic uppercase max-w-4xl tracking-tighter drop-shadow-lg">{activeMedia.title}</h2>
+                      <p className="text-blue-400 mt-4 font-bold uppercase tracking-widest text-sm drop-shadow-md">{activeMedia.author} • {activeMedia.category}</p>
+                      
+                      {/* Fake Player Controls */}
+                      <div className="w-full max-w-3xl mt-12 flex items-center gap-6">
+                        <span className="text-xs font-mono text-slate-400">00:00</span>
+                        <div className="flex-1 h-2 bg-white/20 rounded-full overflow-hidden cursor-pointer">
+                          <div className="w-1/3 h-full bg-blue-500 rounded-full" />
+                        </div>
+                        <span className="text-xs font-mono text-slate-400">{activeMedia.duration}</span>
+                      </div>
+                   </div>
+                 </>
+               )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <div className="grid grid-cols-12 gap-6">
         {/* Hero Segment */}
         <div className="col-span-12 lg:col-span-9 bento-gradient rounded-[3rem] p-10 relative overflow-hidden flex flex-col justify-end min-h-[400px]">
@@ -116,7 +177,8 @@ export default function Multimedia() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               key={item.id} 
-              className="bento-card group overflow-hidden border-slate-700/30 hover:border-blue-500/30 p-0"
+              onClick={() => setActiveMedia(item)}
+              className="bento-card group overflow-hidden border-slate-700/30 hover:border-blue-500/30 p-0 cursor-pointer"
             >
               <div className="relative aspect-video overflow-hidden">
                  <img src={item.thumbnail} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
@@ -141,8 +203,8 @@ export default function Multimedia() {
                        <span className="text-[10px] text-slate-500 font-bold uppercase">{item.author}</span>
                     </div>
                     <div className="flex gap-4">
-                       <Heart className="w-4 h-4 text-slate-500 hover:text-red-500 cursor-pointer transition-colors" />
-                       <Share2 className="w-4 h-4 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" />
+                       <Heart className="w-4 h-4 text-slate-500 hover:text-red-500 cursor-pointer transition-colors" onClick={(e) => e.stopPropagation()} />
+                       <Share2 className="w-4 h-4 text-slate-500 hover:text-blue-500 cursor-pointer transition-colors" onClick={(e) => e.stopPropagation()} />
                     </div>
                  </div>
               </div>

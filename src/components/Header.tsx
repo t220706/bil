@@ -21,9 +21,10 @@ export default function Header() {
         </div>
         <div>
           <h1 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none mb-1">Chào, Đức Tuyên 👋</h1>
-          <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest opacity-80">Ghi chú: Bạn còn 25 trang nữa để đạt mục tiêu!</p>
+          <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest opacity-80">{level === 0 ? "Cùng bắt đầu hành trình ngay hôm nay!" : "Ghi chú: Bạn còn 25 trang nữa để đạt mục tiêu!"}</p>
         </div>
       </div>
+
       
       <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
         <div className="flex items-center gap-2 bg-slate-800/40 px-4 py-2 rounded-xl border border-slate-700/50 text-[10px] font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">

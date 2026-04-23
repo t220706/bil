@@ -12,6 +12,7 @@ import Leaderboard from './pages/Leaderboard';
 import Awards from './pages/Awards';
 import Events from './pages/Events';
 import Profile from './pages/Profile';
+import WithComingSoon from './components/WithComingSoon';
 
 export default function App() {
   return (
@@ -24,14 +25,16 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/library" element={<Library />} />
-              <Route path="/community" element={<Community />} />
               <Route path="/multimedia" element={<Multimedia />} />
-              <Route path="/learning" element={<Learning />} />
-              <Route path="/competitions" element={<Competitions />} />
-              <Route path="/leaderboard" element={<Leaderboard />} />
-              <Route path="/awards" element={<Awards />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/profile" element={<Profile />} />
+              
+              {/* Features Under Development */}
+              <Route path="/community" element={<WithComingSoon><Community /></WithComingSoon>} />
+              <Route path="/learning" element={<WithComingSoon><Learning /></WithComingSoon>} />
+              <Route path="/competitions" element={<WithComingSoon><Competitions /></WithComingSoon>} />
+              <Route path="/leaderboard" element={<WithComingSoon><Leaderboard /></WithComingSoon>} />
+              <Route path="/awards" element={<WithComingSoon><Awards /></WithComingSoon>} />
+              <Route path="/events" element={<WithComingSoon><Events /></WithComingSoon>} />
+              <Route path="/profile" element={<WithComingSoon><Profile /></WithComingSoon>} />
             </Routes>
           </main>
         </div>

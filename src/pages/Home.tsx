@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, Star, MessageSquare, Play, FileText, ChevronRight, BookOpen, Quote, Sparkles, Loader2, Award } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Trophy, Star, MessageSquare, Play, FileText, ChevronRight, BookOpen, Quote, Sparkles, Loader2, Award, Flame } from 'lucide-react';
 import { useUser } from '../store/useUser';
 import { getBookRecommendations } from '../services/geminiService';
 
@@ -62,23 +63,36 @@ const AIRecommendation = () => {
 };
 
 const FEATURED_BOOKS = [
-  { id: '1', title: 'Dế Mèn phiêu lưu ký', author: 'Tô Hoài', category: 'Văn học', rating: 4.8, cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop' },
-  { id: '2', title: 'Những tấm lòng cao cả', author: 'Edmondo De Amicis', category: 'Văn học', rating: 4.7, cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop' },
-  { id: '3', title: 'Tuổi thơ dữ dội', author: 'Phùng Quán', category: 'Văn học', rating: 4.6, cover: 'https://images.unsplash.com/photo-1589998059171-dd8918c81c4d?w=300&h=400&fit=crop' },
-  { id: '4', title: 'Mắt biếc', author: 'Nguyễn Nhật Ánh', category: 'Tiểu thuyết', rating: 4.9, cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop' },
+  { id: '1', title: 'Nhà Giả Kim', author: 'Paulo Coelho', category: 'Tiểu thuyết', rating: 4.8, cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop' },
+  { id: '2', title: 'Sapiens: Lược sử', author: 'Yuval Noah Harari', category: 'Khoa học', rating: 4.9, cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=600&fit=crop' },
+  { id: '3', title: 'Mắt biếc', author: 'Nguyễn Nhật Ánh', category: 'Văn học', rating: 4.8, cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=600&fit=crop' },
+  { id: '4', title: 'Dế Mèn phiêu lưu', author: 'Tô Hoài', category: 'Văn học', rating: 4.7, cover: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&h=600&fit=crop' },
 ];
 
 const TOP_READERS = [
-  { name: 'Minh Khoa', xp: 1200, avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop' },
-  { name: 'Lan Anh', xp: 980, avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop' },
-  { name: 'Gia Huy', xp: 870, avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop' },
+  { name: 'Minh Khoa', xp: 1200, avatar: 'https://i.pravatar.cc/100?u=1' },
+  { name: 'Lan Anh', xp: 980, avatar: 'https://i.pravatar.cc/100?u=2' },
+  { name: 'Gia Huy', xp: 870, avatar: 'https://i.pravatar.cc/100?u=3' },
 ];
 
 export default function Home() {
-  const { xp, level, badges } = useUser();
+  const { xp, level, badges, booksRead, reviewsWritten, addXp } = useUser();
+  const navigate = useNavigate();
 
   return (
     <div className="p-6 grid grid-cols-12 auto-rows-min gap-6 max-w-[1600px] mx-auto">
+      {level === 0 && xp === 0 && (
+        <section className="col-span-12 bento-gradient rounded-[2.5rem] p-8 border border-blue-500/30 flex items-center justify-between">
+           <div>
+              <h2 className="text-2xl font-black text-white italic tracking-tighter uppercase mb-2">Chào mừng Tân đạo sứ! 🌟</h2>
+              <p className="text-sm text-slate-300">Hoàn thành nhiệm vụ đầu tiên: Đọc cuốn sách ưa thích của bạn để nhận 100 XP và đạt Cấp độ 1.</p>
+           </div>
+           <button onClick={() => { addXp(1000); navigate('/library'); }} className="bg-white text-black font-black py-4 px-8 rounded-2xl hover:scale-105 transition-all shadow-xl active:scale-95 text-[10px] uppercase tracking-widest flex items-center gap-2">
+             <Trophy className="w-4 h-4 text-yellow-500 fill-yellow-500" /> Bắt đầu ngay
+           </button>
+        </section>
+      )}
+
       {/* Hero Banner */}
       <section className="col-span-12 lg:col-span-7 min-h-[400px] bento-gradient rounded-[2.5rem] p-8 border border-blue-500/30 relative overflow-hidden flex flex-col justify-center">
         <div className="relative z-10">
@@ -88,21 +102,21 @@ export default function Home() {
             transition={{ delay: 0.2 }}
           >
             <span className="bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Sách Hay Mỗi Ngày</span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold mt-4 leading-tight text-white mb-4 italic">NHÀ GIẢ KIM <br /><span className="text-blue-500 not-italic">PAULO COELHO</span></h1>
-            <p className="text-slate-400 mb-8 max-w-sm leading-relaxed text-sm">Hành trình theo đuổi vận mệnh của cậu bé chăn cừu Santiago sẽ truyền cảm hứng mạnh mẽ cho khát vọng của bạn.</p>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mt-4 leading-tight text-white mb-4 italic uppercase tracking-tighter">NHÀ GIẢ KIM <br /><span className="text-blue-500 not-italic">PAULO COELHO</span></h1>
+            <p className="text-slate-400 mb-8 max-w-sm leading-relaxed text-sm italic">Hành trình theo đuổi vận mệnh của cậu bé chăn cừu Santiago sẽ truyền cảm hứng mạnh mẽ cho khát vọng của bạn.</p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white text-black font-bold py-3 px-8 rounded-2xl hover:scale-105 transition-all shadow-lg active:scale-95">
+              <Link to="/library" className="bg-white text-black font-black py-4 px-10 rounded-2xl hover:scale-105 transition-all shadow-xl active:scale-95 text-[10px] uppercase tracking-widest">
                 Đọc ngay
-              </button>
-              <button className="bg-slate-800/80 backdrop-blur-md text-white font-bold py-3 px-8 rounded-2xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center gap-2">
+              </Link>
+              <Link to="/multimedia" className="bg-slate-800/80 backdrop-blur-md text-white font-black py-4 px-10 rounded-2xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center gap-3 text-[10px] uppercase tracking-widest">
                 <Play className="w-4 h-4 fill-white" /> Nghe Podcast
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
         <div className="absolute right-[-20px] top-[-20px] w-64 h-80 bg-blue-500/10 blur-[80px] rounded-full"></div>
-        <div className="absolute right-8 bottom-8 w-40 h-56 bg-slate-800 rounded-2xl shadow-2xl rotate-12 border-4 border-slate-700 overflow-hidden hidden md:block">
-          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop" className="w-full h-full object-cover opacity-80" alt="Book" />
+        <div className="absolute right-12 bottom-0 w-48 h-64 bg-slate-800 rounded-3xl shadow-2xl rotate-6 border-4 border-slate-700 overflow-hidden hidden md:block">
+          <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop" className="w-full h-full object-cover" alt="Book" />
         </div>
       </section>
 
@@ -131,11 +145,11 @@ export default function Home() {
         <div className="mt-8 grid grid-cols-3 gap-3">
           <div className="bg-slate-800/30 p-4 rounded-2xl text-center border border-slate-700/50 hover:bg-slate-700/50 transition-colors">
             <div className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Chuỗi</div>
-            <div className="text-lg font-bold text-white">15 Ngày</div>
+            <div className="text-lg font-bold text-white">{level === 0 ? 0 : 15} Ngày</div>
           </div>
           <div className="bg-slate-800/30 p-4 rounded-2xl text-center border border-slate-700/50 hover:bg-slate-700/50 transition-colors">
             <div className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Sách đọc</div>
-            <div className="text-lg font-bold text-blue-400">32</div>
+            <div className="text-lg font-bold text-blue-400">{booksRead}</div>
           </div>
           <div className="bg-slate-800/30 p-4 rounded-2xl text-center border border-slate-700/50 hover:bg-slate-700/50 transition-colors">
             <div className="text-[10px] text-slate-500 mb-1 uppercase font-bold">Huy hiệu</div>
@@ -155,15 +169,24 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
           {FEATURED_BOOKS.map((book) => (
-            <div key={book.id} className="group cursor-pointer">
+            <div 
+              key={book.id} 
+              className="group cursor-pointer"
+              onClick={() => navigate('/library')}
+            >
               <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-slate-700 bg-slate-800 mb-3 relative">
                  <img src={book.cover} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={book.title} />
                  <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded-lg text-[10px] font-bold text-yellow-500 flex items-center gap-1">
                     <Star className="w-3 h-3 fill-yellow-500" /> {book.rating}
                  </div>
+                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div className="bg-white p-2 rounded-full scale-0 group-hover:scale-100 transition-transform">
+                       <BookOpen className="w-4 h-4 text-black" />
+                    </div>
+                 </div>
               </div>
-              <h4 className="text-xs font-bold text-white line-clamp-1 group-hover:text-blue-400 transition-colors">{book.title}</h4>
-              <p className="text-[10px] text-slate-500 mt-0.5">{book.author}</p>
+              <h4 className="text-xs font-black text-white italic uppercase tracking-tighter line-clamp-1 group-hover:text-blue-400 transition-colors">{book.title}</h4>
+              <p className="text-[10px] text-slate-500 mt-0.5 font-bold uppercase tracking-widest">{book.author}</p>
             </div>
           ))}
         </div>
@@ -175,49 +198,65 @@ export default function Home() {
       </section>
 
       {/* Leaderboard & Arena */}
-      <section className="col-span-12 lg:col-span-8 bento-card p-8">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-bold flex items-center gap-2">
-            <span className="text-orange-500">🔥</span> Đấu trường Tri thức
-          </h3>
-          <button className="text-[10px] font-bold text-blue-400 uppercase tracking-widest hover:underline">Bảng xếp hạng</button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-3">
-             {TOP_READERS.map((reader, i) => (
-                <div key={i} className={`flex items-center gap-4 p-3 rounded-2xl border transition-all ${
-                  i === 0 ? 'bg-blue-600/10 border-blue-500/20' : 'bg-slate-800/40 border-slate-700/50 opacity-70'
-                }`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                    i === 0 ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-400'
-                  }`}>
-                    {i + 1}
-                  </div>
-                  <img src={reader.avatar} className="w-10 h-10 rounded-full border border-slate-700" alt={reader.name} />
-                  <div className="flex-1">
-                    <div className="text-sm font-bold text-white">{reader.name}</div>
-                    <div className="text-[11px] font-mono text-blue-400">{reader.xp} XP</div>
-                  </div>
+      <section className="col-span-12 lg:col-span-8 bento-card p-8 relative overflow-hidden">
+        {level === 0 && (
+          <div className="absolute inset-0 z-20 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center border border-slate-700/50 rounded-[2.5rem]">
+             <div className="bg-slate-800 p-6 rounded-3xl border border-slate-700 text-center max-w-sm shadow-2xl">
+                <div className="bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-slate-600">
+                   <Trophy className="w-8 h-8 text-slate-400" />
                 </div>
-             ))}
-          </div>
-          <div className="flex flex-col justify-between">
-             <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50">
-                <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Hoạt động mới nhất</h4>
-                <div className="space-y-4">
-                   <div className="flex gap-3 items-center">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
-                      <p className="text-[11px] text-white"><strong>Lan Anh</strong> vừa review "Nhà giả kim"</p>
-                   </div>
-                   <div className="flex gap-3 items-center">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-                      <p className="text-[11px] text-white">Bạn vừa nhận huy hiệu mới!</p>
-                   </div>
-                </div>
+                <h3 className="text-xl font-black text-white italic uppercase tracking-tighter mb-2">Đấu trường đang rèn luyện</h3>
+                <p className="text-xs text-slate-400 mb-6 italic">Tính năng cạnh tranh và Bảng xếp hạng sẽ mở khóa khi bạn đạt <strong>Cấp độ 1</strong>. Hãy đọc sách để tích lũy XP!</p>
+                <button onClick={() => navigate('/library')} className="bg-blue-600 text-white font-black py-3 px-8 rounded-xl hover:bg-blue-700 transition-all shadow-lg active:scale-95 text-[10px] uppercase tracking-widest w-full">
+                   Đến thư viện ngay
+                </button>
              </div>
-             <button className="w-full mt-4 py-3 bg-blue-600 text-white text-xs font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg active:scale-95 uppercase tracking-widest">
-               Tham gia ngay
-             </button>
+          </div>
+        )}
+        <div className={`transition-opacity duration-300 ${level === 0 ? 'opacity-30 pointer-events-none blur-sm' : ''}`}>
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-lg font-bold flex items-center gap-2">
+              <span className="text-orange-500">🔥</span> Đấu trường Tri thức
+            </h3>
+            <button className="text-[10px] font-bold text-blue-400 uppercase tracking-widest hover:underline">Bảng xếp hạng</button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-3">
+               {TOP_READERS.map((reader, i) => (
+                  <div key={i} className={`flex items-center gap-4 p-3 rounded-2xl border transition-all ${
+                    i === 0 ? 'bg-blue-600/10 border-blue-500/20' : 'bg-slate-800/40 border-slate-700/50 opacity-70'
+                  }`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                      i === 0 ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-400'
+                    }`}>
+                      {i + 1}
+                    </div>
+                    <img src={reader.avatar} className="w-10 h-10 rounded-full border border-slate-700" alt={reader.name} />
+                    <div className="flex-1">
+                      <div className="text-sm font-bold text-white">{reader.name}</div>
+                      <div className="text-[11px] font-mono text-blue-400">{reader.xp} XP</div>
+                    </div>
+                  </div>
+               ))}
+            </div>
+            <div className="flex flex-col justify-between">
+               <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50">
+                  <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Hoạt động mới nhất</h4>
+                  <div className="space-y-4">
+                     <div className="flex gap-3 items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></div>
+                        <p className="text-[11px] text-white"><strong>Lan Anh</strong> vừa review "Nhà giả kim"</p>
+                     </div>
+                     <div className="flex gap-3 items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                        <p className="text-[11px] text-white">Bạn vừa nhận huy hiệu mới!</p>
+                     </div>
+                  </div>
+               </div>
+               <button className="w-full mt-4 py-3 bg-blue-600 text-white text-xs font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg active:scale-95 uppercase tracking-widest">
+                 Tham gia ngay
+               </button>
+            </div>
           </div>
         </div>
       </section>

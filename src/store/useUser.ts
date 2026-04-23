@@ -9,17 +9,14 @@ interface UserState extends UserStats {
 }
 
 export const useUser = create<UserState>((set) => ({
-  xp: 720,
-  level: 8,
-  booksRead: 32,
-  reviewsWritten: 15,
-  badges: [
-    { id: '1', name: 'Độc giả chăm chỉ', icon: 'Book', description: 'Đã đọc 10 cuốn sách' },
-    { id: '2', name: 'Reviewer tâm huyết', icon: 'Pen', description: 'Đã viết 5 bài review' },
-  ],
+  xp: 0,
+  level: 0,
+  booksRead: 0,
+  reviewsWritten: 0,
+  badges: [],
   addXp: (amount) => set((state) => {
     const newXp = state.xp + amount;
-    const newLevel = Math.floor(newXp / 1000) + 1; // Simple level logic
+    const newLevel = Math.floor(newXp / 1000); // 0-999 is Level 0, 1000 is Level 1
     return { xp: newXp, level: newLevel };
   }),
   markBookAsRead: () => set((state) => ({ booksRead: state.booksRead + 1 })),
