@@ -118,7 +118,7 @@ export default function Competitions() {
             <span className="bg-white/10 text-blue-300 text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-[0.2em] border border-white/10">Vinh danh tri thức</span>
             <h2 className="text-4xl font-extrabold mt-6 mb-4 italic tracking-tight">ĐẠI SỨ ĐỌC SÁCH</h2>
             <p className="text-slate-300 text-sm mb-10 max-w-xl leading-relaxed italic pr-8 border-l-2 border-blue-500/30 pl-6">
-              Đọc sách không chỉ là tiếp nhận kiến thức, mà là hành trình tỏa sáng cá nhân. Những cá nhân xuất sắc có cơ hội nhận danh hiệu danh giá từ BookVerse.
+              Đọc sách không chỉ là tiếp nhận kiến thức, mà là hành trình tỏa sáng cá nhân. Những cá nhân xuất sắc có cơ hội nhận danh hiệu danh giá từ Hệ sinh thái tri thức.
             </p>
             <div className="flex flex-wrap gap-4">
               {[

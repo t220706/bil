@@ -20,7 +20,7 @@ export default function Header() {
            </div>
         </div>
         <div>
-          <h1 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none mb-1">Chào, Đức Tuyên 👋</h1>
+          <h1 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none mb-1">Chào, Ngọc Lan 👋</h1>
           <p className="text-[10px] font-bold text-blue-400 uppercase tracking-widest opacity-80">{level === 0 ? "Cùng bắt đầu hành trình ngay hôm nay!" : "Ghi chú: Bạn còn 25 trang nữa để đạt mục tiêu!"}</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function Header() {
 
           <div className="flex items-center gap-4">
             <div className="text-right hidden sm:block">
-              <h4 className="text-xs font-black text-white uppercase italic tracking-tighter leading-none mb-1">Đức Tuyên</h4>
+              <h4 className="text-xs font-black text-white uppercase italic tracking-tighter leading-none mb-1">Ngọc Lan</h4>
               <div className="text-[9px] text-blue-400 font-black uppercase tracking-widest bg-blue-500/10 px-2 py-0.5 rounded-md border border-blue-500/20">LVL {level}</div>
             </div>
             <div className="relative group cursor-pointer">

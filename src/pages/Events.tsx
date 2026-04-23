@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 const EVENTS = [
   { id: 1, title: 'Ngày hội Sách 2026', date: 'Cả ngày 15/05', location: 'Công viên Thống Nhất', category: 'Lễ hội', type: 'offline', image: 'https://images.unsplash.com/photo-1521056787327-165dc2a32836?w=600&h=400&fit=crop' },
   { id: 2, title: 'Webinar: Bí kíp ôn thi Văn', date: '19:00 - 21/05', location: 'Phòng Zoom 02', category: 'Học tập', type: 'online', image: 'https://images.unsplash.com/photo-1589998059171-dd8918c81c4d?w=600&h=400&fit=crop' },
-  { id: 3, title: 'Talkshow cùng tác giả Tô Hoài', date: '09:00 - 25/05', location: 'BookVerse Studio', category: 'Talkshow', type: 'online', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&h=400&fit=crop' },
+  { id: 3, title: 'Talkshow cùng tác giả Tô Hoài', date: '09:00 - 25/05', location: 'Hệ sinh thái tri thức Studio', category: 'Talkshow', type: 'online', image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&h=400&fit=crop' },
 ];
 
 export default function Events() {

@@ -25,7 +25,7 @@ export default function Navigation() {
   return (
     <aside className="w-20 bg-bento-surface border-r border-bento-border h-screen sticky top-0 flex flex-col items-center py-10 gap-10 overflow-y-auto scrollbar-none z-50">
       <div className="w-12 h-12 bg-blue-600 rounded-[1.2rem] flex items-center justify-center text-2xl font-black shadow-[0_10px_30px_rgba(37,99,235,0.4)] text-white italic tracking-tighter">
-        B
+        HST
       </div>
 
       <nav className="flex-1 w-full flex flex-col items-center gap-6">

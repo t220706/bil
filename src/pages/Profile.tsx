@@ -24,7 +24,7 @@ export default function Profile() {
               </div>
            </div>
            
-           <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase mb-2">Đức Tuyên</h2>
+           <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase mb-2">Ngọc Lan</h2>
            <p className="text-blue-400 text-xs font-black uppercase tracking-[0.2em] mb-6">Đạo sứ Tri thức - LVL {level}</p>
            
            <div className="w-full space-y-2 mb-8">

@@ -61,7 +61,7 @@ export default function Community() {
     <div className="p-6 space-y-6 max-w-5xl mx-auto min-h-screen">
       <div className="grid grid-cols-12 gap-6 items-center">
         <div className="col-span-12 lg:col-span-8 flex flex-col justify-center">
-          <h1 className="text-3xl font-extrabold text-white mb-2">Cộng đồng BookVerse</h1>
+          <h1 className="text-3xl font-extrabold text-white mb-2">Cộng đồng Hệ sinh thái tri thức</h1>
           <p className="text-slate-400 text-sm">Nơi kết nối đam mê, chia sẻ tri thức và cùng nhau tỏa sáng.</p>
         </div>
         <div className="col-span-12 lg:col-span-4 flex justify-end">
