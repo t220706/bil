@@ -28,7 +28,7 @@ const ALL_BOOKS = [
     cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=600&fit=crop', 
     description: 'Khám phá hành trình tiến hóa của Homo sapiens từ một loài vượn bình thường ở châu Phi trở thành thế lực thống trị hành tinh.',
     content: [
-      "Khoảng 14 tỷ năm trước, vật chất, năng lượng, thời gian và không gian đã ra đời trong một sự kiện vĩ đại mà chúng ta gọi là Vụ Nổ Lớn - Big Bang. Câu chuyện về những đặc điểm cơ bản này của vũ trụ được gọi là vật lý học.",
+      "Khoảng 14 tỷ năm trước, vật chất, năng lượng, thời gian và không gian đã ra đời trong một sự kiện vĩ đại mà chúng bảo gọi là Vụ Nổ Lớn - Big Bang. Câu chuyện về những đặc điểm cơ bản này của vũ trụ được gọi là vật lý học.",
       "Sau khi xuất hiện được khoảng 300.000 năm, vật chất và năng lượng bắt đầu liên kết thành những cấu trúc phức tạp, gọi là nguyên tử, rồi từ nguyên tử kết hợp thành phân tử. Câu chuyện về các nguyên tử, phân tử và các phản ứng của chúng được gọi là hóa học.",
       "Và rồi vào khoảng 3,8 tỷ năm trước, trên một hành tinh có tên là Trái Đất, một số phân tử nhất định đã liên kết với nhau để tạo thành những cấu trúc phức tạp và lớn lạ thường mang tên sinh vật. Câu chuyện về các sinh vật được gọi là sinh học.",
       "Chỉ đến khoảng 70.000 năm trước, các sinh vật thuộc loài Homo sapiens mới bắt đầu hình thành nên các cấu trúc thậm chí còn phức tạp hơn gọi là văn hóa. Sự phát triển tiếp theo của các trung tâm văn hóa này được gọi là lịch sử.",
@@ -66,6 +66,241 @@ const ALL_BOOKS = [
       "Hai cái răng đen nhánh lúc nào cũng nhai ngoàm ngoạp như hai lưỡi liềm máy làm việc. Sợi râu tôi dài và uốn cong một vẻ rất đỗi hùng dũng. Tôi lấy làm hãnh diện với bà con về cặp râu ấy lắm.",
       "Nhưng hỡi ôi, sắc đẹp thể chất chưa chắc đã tỷ lệ thuận với đức độ tinh thần. Lúc ấy, tôi kiêu căng và xốc nổi lắm. Cái bệnh kiêu hãnh của tuổi trẻ đã khiến tôi gây ra không biết bao nhiêu lầm lỗi và phải trả giá bằng cả mồ hôi và nước mắt trong suốt cuộc hành trình dài đằng đẵng phía sau này..."
     ]
+  },
+  { 
+    id: '5', 
+    title: 'Tư duy nhanh và chậm', 
+    author: 'Daniel Kahneman', 
+    category: 'Tâm lý', 
+    rating: 4.8, 
+    cover: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&h=600&fit=crop', 
+    description: 'Cuốn sách khám phá hai hệ thống tư duy chi phối nhận thức của chúng ta: Hệ thống 1 nhanh, theo bản năng và Hệ thống 2 chậm rãi, logic.',
+    content: [
+      "Để hiểu được cách thức hoạt động của bộ não, chúng ta có thể tưởng tượng về hai hệ thống đang cùng tồn tại và chi phối suy nghĩ:",
+      "Hệ thống 1 hoạt động tự động và nhanh chóng, với rất ít hoặc không cần nỗ lực, và không có cảm giác kiểm soát có chủ ý.",
+      "Hệ thống 2 phân bổ sự chú ý cho các hoạt động trí óc đòi hỏi nỗ lực, bao gồm cả những tính toán phức tạp. Các hoạt động của Hệ thống 2 thường liên quan đến trải nghiệm chủ quan về tác nhân, sự lựa chọn và sự tập trung.",
+      "Khi chúng ta nghĩ về bản thân mình, chúng ta xác định mình là Hệ thống 2, một bản ngã có ý thức, suy luận, có niềm tin, đưa ra các lựa chọn và quyết định xem nên nghĩ gì và làm gì.",
+      "Tuy nhiên, trên thực tế, Hệ thống 1 mới là trung tâm của vô số các hành động nhỏ trong cuộc sống thường ngày. Hệ thống 2 chỉ âm thầm tiếp nhận dữ liệu và hỗ trợ khi Hệ thống 1 gặp rắc rối. Cuốn sách này là hành trình tìm hiểu những định kiến nhận thức và lý do tại sao chúng ta đôi khi lại quyết định quá vô lý."
+    ]
+  },
+  { 
+    id: '6', 
+    title: 'Đắc Nhân Tâm', 
+    author: 'Dale Carnegie', 
+    category: 'Kỹ năng', 
+    rating: 4.9, 
+    cover: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=600&fit=crop', 
+    description: 'Một trong những cuốn sách bán chạy nhất mọi thời đại về nghệ thuật tạo ảnh hưởng và thu phục lòng người.',
+    content: [
+      "Nguyên tắc 1: Không chỉ trích, oán trách hay than phiền.",
+      "Để hiểu một người, thay vì lên án, hãy cố gắng tìm hiểu lý do tại sao họ làm như vậy. Điều đó có lợi hơn nhiều so với việc chỉ trích. Nó nuôi dưỡng những tình cảm tốt đẹp, sự khoan dung và lòng vị tha.",
+      "Nguyên tắc 2: Thành thật khen ngợi và biết ơn người khác.",
+      "Bí quyết sâu xa nhất của bản tính con người là khao khát được đánh giá cao. Đừng bao giờ nhầm lẫn giữa sự nịnh hót và lời khen ngợi chân thành. Lời khen chân thành xuất phát từ tận đáy lòng, trong khi xu nịnh chỉ từ ống kính của sự vụ kỷ.",
+      "Đây không phải là nghệ thuật thao túng. Đây là nghệ thuật công nhận giá trị của mọi cá nhân mà bạn tiếp xúc hàng ngày."
+    ]
+  },
+  { 
+    id: '7', 
+    title: 'Cây cam ngọt của tôi', 
+    author: 'José Mauro de Vasconcelos', 
+    category: 'Văn học', 
+    rating: 4.9, 
+    cover: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=600&fit=crop', 
+    description: 'Một câu chuyện cảm động về Zezé, cậu bé nghèo với trí tưởng tượng phong phú và người bạn đặc biệt là một cây cam ngọt non.',
+    content: [
+      "Vào một buổi sáng rực rỡ, Zezé nắm tay người anh trai Totoca bước đi trên phố. Zezé mới sáu tuổi rưỡi, sinh ra trong một gia đình nghèo đông con ở khu Bangu, Brazil.",
+      "Cậu bé là một đứa trẻ tinh nghịch, lắm trò và thường xuyên bị cả nhà đánh đòn vì những trò quậy phá của mình. Không ai thấu hiểu tâm hồn nhạy cảm và trí tuệ thiên bẩm của Zezé.",
+      "Cho đến ngày gia đình phải chuyển nhà. Ở khoảng sân sau có nhiều cây cối, Zezé bằng sự thất vọng vì phải nhường hết cây to cho các anh chị, đã 'nhận' một cây cam ngọt non làm bạn.",
+      "Cậu đặt tên cho nó là Minguinho. Minguinho biết nói, Minguinho biết lắng nghe và trở thành người bạn tâm giao duy nhất của Zezé trong những ngày tháng cô đơn và chịu nhiều đau đớn.",
+      "'Tại sao người ta lại nói cho bọn trẻ biết nhiều chuyện như vậy?' Cuốn sách này là một bản tuyên ngôn về tuổi thơ, tình yêu thương và nỗi đau trưởng thành."
+    ]
+  },
+  { 
+    id: '8', 
+    title: 'Phía sau nghi can X', 
+    author: 'Keigo Higashino', 
+    category: 'Văn học', 
+    cover: 'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400&h=600&fit=crop', 
+    description: 'Một cuốn tiểu thuyết trinh thám xuất sắc của Nhật Bản về tình yêu, sự hy sinh và trí tuệ đỉnh cao của một thiên tài toán học.',
+    content: [
+      "Vào một buổi sáng đầu tháng Ba, xác chết một người đàn ông được phát hiện tại ven sông Kyu-Edo.",
+      "Tất cả đều chỉ ra đó là Togashi Shinji - chồng cũ của Yasuko, người đang làm việc tại một tiệm cơm hộp nhỏ. Câu chuyện bắt đầu từ đòn phòng vệ chính đáng nhưng lại dẫn đến một tội ác không thể cứu vãn.",
+      "Và khi cảnh sát bế tắc, họ đã tìm đến Kusanagi. Nhưng điều đáng nói là, đối thủ thực sự của cảnh sát không phải là Kusanagi, mà chính là người hàng xóm bí ẩn của Yasuko - Ishigami.",
+      "Từng là một thiên tài toán học nhưng giờ đây chỉ là một giáo viên cấp 3 với cuộc sống tẻ nhạt, liệu Ishigami đã dùng bài toán vô nghiệm nào để che đậy một tội lỗi không dứt?"
+    ]
+  },
+  { 
+    id: '9', 
+    title: 'Dấu chân trên cát', 
+    author: 'Nguyên Phong', 
+    category: 'Văn học', 
+    cover: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400&h=600&fit=crop', 
+    description: 'Những câu chuyện có thật đầy phép thuật kỳ diệu từ xứ sở Ai Cập và Hy Lạp.',
+    content: [
+      "Bạn nghĩ gì về thời gian? Thời gian đối với chúng ta trôi qua quá nhanh, nhưng đối với những lăng mộ ở Ai Cập thì thời gian như ngừng trôi.",
+      "Hàng ngàn năm qua, những xác ướp dưới kim tự tháp dường như đã mang đi biết bao bí mật về một nền văn minh huy hoàng. Dấu chân trên cát kể về những nhà ngoại cảm, những người khao khát được kết nối với vĩnh hằng.",
+      "Đó là câu chuyện về một tình yêu kỳ lạ xuyên qua lớp bụi thời gian, nơi những linh hồn tìm thấy nhau sau hàng ngàn năm chờ đợi.",
+      "Cuộc sống nơi dương thế vốn chỉ là một dòng nước nhỏ chảy vào dòng đại dương mênh mông, cái chết có chăng chỉ là một sự chuyển tiếp để đến bến đỗ bình yên cuối cùng."
+    ]
+  },
+  { 
+    id: '26', 
+    title: 'Nỗi buồn chiến tranh', 
+    author: 'Bảo Ninh', 
+    category: 'Văn học', 
+    rating: 1.0, 
+    cover: 'https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=400&h=600&fit=crop', 
+    description: 'Một góc nhìn chân thực, trần trụi và xót xa về sự tàn khốc của chiến tranh thông qua dòng hồi ức của một cựu chiến binh.',
+    content: [
+      "Chiến tranh kết thúc từ lâu nhưng trong tâm hồn người lính như Kiên, nó dường như chưa bao giờ chịu lùi xa.",
+      "Kiên là một người lính trở về từ chiến trường nhưng bị bủa vây bởi những ký ức kinh hoàng nơi rừng núi Trường Sơn. Từng người đồng đội đã ngã xuống lại hiện về trong những cơn ác mộng dai dẳng.",
+      "Tình yêu với Phương cũng không thể vượt qua được những bóng ma của đại ngàn. Họ đã yêu nhau trước lúc chia xa, nhưng ngày gặp lại, nỗi đau đã làm cho mọi thứ không còn vẹn nguyên.",
+      "Tác phẩm không ca ngợi những chiến công hiển hách mà đi sâu vào những chấn thương tâm lý của con người sau một cuộc chiến tàn khốc."
+    ]
+  },
+  { 
+    id: '10', 
+    title: 'Hai vạn dặm dưới đáy biển', 
+    author: 'Jules Verne', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=600&fit=crop', 
+    description: 'Chuyến phiêu lưu kỳ thú của giáo sư Aronnax và chiếc tàu ngầm Nautilus của thuyền trưởng Nemo.',
+    content: ["Nội dung sách Hai vạn dặm dưới đáy biển đang được cập nhật..."]
+  },
+  { 
+    id: '11', 
+    title: 'Bắt trẻ đồng xanh', 
+    author: 'J.D. Salinger', 
+    category: 'Văn học', 
+    cover: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=600&fit=crop', 
+    description: 'Tuổi trẻ lạc lối và sự nổi loạn của Holden Caulfield ở thành phố New York sau khi bị đuổi khỏi trường.',
+    content: ["Nội dung sách Bắt trẻ đồng xanh đang được cập nhật..."]
+  },
+  { 
+    id: '12', 
+    title: 'Đồi thỏ', 
+    author: 'Richard Adams', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=400&h=600&fit=crop', 
+    description: 'Một câu chuyện hấp dẫn về sự sinh tồn, nỗi sợ hãi, nghị lực và tình đồng đội.',
+    content: ["Nội dung sách Đồi thỏ đang được cập nhật..."]
+  },
+  { 
+    id: '13', 
+    title: 'Cuốn theo chiều gió', 
+    author: 'Margaret Mitchell', 
+    category: 'Văn học', 
+    cover: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=600&fit=crop', 
+    description: 'Câu chuyện về Scarlett O\'Hara, một phụ nữ Mỹ có sức mạnh và ý chí đáng kinh ngạc trong thời nội chiến.',
+    content: ["Nội dung sách Cuốn theo chiều gió đang được cập nhật..."]
+  },
+  { 
+    id: '14', 
+    title: 'Hoàng tử bé', 
+    author: 'Antoine de Saint-Exupéry', 
+    category: 'Văn học', 
+    cover: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=600&fit=crop', 
+    description: 'Một hoàng tử phiêu du khắp các vì sao để đi tìm ý nghĩa của tình bạn, tình yêu và cuộc sống.',
+    content: ["Nội dung sách Hoàng tử bé đang được cập nhật..."]
+  },
+  { 
+    id: '15', 
+    title: 'Trăm năm cô đơn', 
+    author: 'Gabriel García Márquez', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=600&fit=crop', 
+    description: 'Số phận cô đơn của bảy thế hệ gia đình Buendía tại ngôi làng Macondo hư cấu.',
+    content: ["Nội dung sách Trăm năm cô đơn đang được cập nhật..."]
+  },
+  { 
+    id: '16', 
+    title: 'Suối nguồn', 
+    author: 'Ayn Rand', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=600&fit=crop', 
+    description: 'Câu chuyện về Howard Roark, kiến trúc sư đấu tranh cho chủ nghĩa cá nhân trước tập thể.',
+    content: ["Nội dung sách Suối nguồn đang được cập nhật..."]
+  },
+  { 
+    id: '17', 
+    title: 'Tội ác và hình phạt', 
+    author: 'Fyodor Dostoevsky', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400&h=600&fit=crop', 
+    description: 'Nghiên cứu về tâm lý đạo đức đầy đau khổ, rằn vặt của linh hồn con người thông qua một cựu sinh viên nghèo.',
+    content: ["Nội dung sách Tội ác và hình phạt đang được cập nhật..."]
+  },
+  { 
+    id: '18', 
+    title: 'Đừng bao giờ đi ăn một mình', 
+    author: 'Keith Ferrazzi', 
+    category: 'Kỹ năng', 
+    cover: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=400&h=600&fit=crop', 
+    description: 'Nghệ thuật xây dựng và làm chủ các mối quan hệ một cách thông minh, có hệ thống và đầy chiến lược.',
+    content: ["Nội dung sách Đừng bao giờ đi ăn một mình đang được cập nhật..."]
+  },
+  { 
+    id: '19', 
+    title: 'Thiên tài bên trái, kẻ điên bên phải', 
+    author: 'Cao Minh', 
+    category: 'Tâm lý', 
+    cover: 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&h=600&fit=crop', 
+    description: 'Góc nhìn thú vị về thế giới nội tâm của những bệnh nhân tâm thần để thấy ranh giới mong manh giữa thiên tài và rồ dại.',
+    content: ["Nội dung sách Thiên tài bên trái, kẻ điên bên phải đang được cập nhật..."]
+  },
+  { 
+    id: '20', 
+    title: 'Tôi tài giỏi, bạn cũng thế', 
+    author: 'Adam Khoo', 
+    category: 'Kỹ năng', 
+    cover: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=600&fit=crop', 
+    description: 'Mọi đứa trẻ đều có khả năng trở thành thiên tài nếu chúng có một phương pháp đúng đắn.',
+    content: ["Nội dung sách Tôi tài giỏi, bạn cũng thế đang được cập nhật..."]
+  },
+  { 
+    id: '21', 
+    title: 'Chó Sói của Phố Wall', 
+    author: 'Jordan Belfort', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&h=600&fit=crop', 
+    description: 'Hồi ký một nhà môi giới chứng khoán điên rồ và một phần lịch sử của phố Wall.',
+    content: ["Nội dung sách Chó Sói của Phố Wall đang được cập nhật..."]
+  },
+  { 
+    id: '22', 
+    title: 'Dạy con làm giàu', 
+    author: 'Robert Kiyosaki', 
+    category: 'Kỹ năng', 
+    cover: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=600&fit=crop', 
+    description: 'Bài học quan điểm về đồng tiền và trí thông minh tài chính thông qua bài học của hai người cha.',
+    content: ["Nội dung sách Dạy con làm giàu đang được cập nhật..."]
+  },
+  { 
+    id: '23', 
+    title: 'Chúa tể những chiếc nhẫn', 
+    author: 'J.R.R. Tolkien', 
+    category: 'Tiểu thuyết', 
+    cover: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=600&fit=crop', 
+    description: 'Cuộc đấu tranh quyết liệt bảo vệ Trung Địa khỏi sức mạnh hắc ám từ Ác chúa Sauron.',
+    content: ["Nội dung sách Chúa tể những chiếc nhẫn đang được cập nhật..."]
+  },
+  { 
+    id: '24', 
+    title: 'Nghĩ giàu và làm giàu', 
+    author: 'Napoleon Hill', 
+    category: 'Kỹ năng', 
+    cover: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=400&h=600&fit=crop', 
+    description: 'Được mệnh danh là cuốn sách giúp nhiều người trở thành triệu phú nhất trong lịch sử.',
+    content: ["Nội dung sách Nghĩ giàu và làm giàu đang được cập nhật..."]
+  },
+  { 
+    id: '25', 
+    title: 'Vũ trụ', 
+    author: 'Carl Sagan', 
+    category: 'Khoa học', 
+    cover: 'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=400&h=600&fit=crop', 
+    description: 'Hành trình hùng vĩ và sự tiến hóa của vũ trụ thông qua con mắt giải thích hấp dẫn của khoa học.',
+    content: ["Nội dung sách Vũ trụ đang được cập nhật..."]
   }
 ];
 
@@ -322,10 +557,14 @@ export default function Library() {
                     <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6 italic">{selectedBook.author}</p>
                     
                     <div className="flex items-center gap-6 mb-8 pb-8 border-b border-white/5">
-                       <div className="flex items-center gap-2">
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                          <span className="text-xs font-black text-white italic">{selectedBook.rating} / 5</span>
-                       </div>
+                       {selectedBook.rating ? (
+                         <div className="flex items-center gap-2">
+                            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                            <span className="text-xs font-black text-white italic">{selectedBook.rating} / 5</span>
+                         </div>
+                       ) : (
+                         <span className="text-xs font-black text-slate-500 italic">Chưa có đánh giá</span>
+                       )}
                        <div className="flex items-center gap-2">
                           <MessageSquare className="w-4 h-4 text-blue-500" />
                           <span className="text-xs font-black text-white italic">45 Đánh giá</span>
@@ -483,9 +722,11 @@ export default function Library() {
                        <PlayCircle className="w-3 h-3" /> Nghe tóm tắt
                      </button>
                    </div>
-                   <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded-lg text-[10px] font-bold text-yellow-500 flex items-center gap-1">
-                      <Star className="w-3 h-3 fill-yellow-500" /> {book.rating}
-                   </div>
+                   {book.rating && (
+                     <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md px-1.5 py-0.5 rounded-lg text-[10px] font-bold text-yellow-500 flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-yellow-500" /> {book.rating}
+                     </div>
+                   )}
                 </div>
                 <div className="px-1">
                   <h3 className="text-xs font-bold text-white mb-0.5 line-clamp-1 group-hover:text-blue-400 transition-colors uppercase tracking-tight">{book.title}</h3>
