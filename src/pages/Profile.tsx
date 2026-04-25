@@ -16,7 +16,7 @@ export default function Profile() {
               <div className="absolute inset-0 bg-blue-500 blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity rounded-full"></div>
               <div className="w-32 h-32 rounded-[2.5rem] bg-gradient-to-tr from-blue-600 to-indigo-600 p-1 relative z-10">
                  <div className="w-full h-full rounded-[2.2rem] bg-slate-900 flex items-center justify-center overflow-hidden">
-                    <img src="https://i.pravatar.cc/150?u=htuyen220706@gmail.com" alt="Avatar" className="w-full h-full object-cover" />
+                    <img src="/avatar.jpg" alt="Avatar" className="w-full h-full object-cover" />
                  </div>
               </div>
               <div className="absolute -bottom-2 -right-2 bg-yellow-500 p-2 rounded-xl shadow-lg border-2 border-slate-900 z-20">

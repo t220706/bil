@@ -53,9 +53,9 @@ export default function Header() {
             <div className="relative group cursor-pointer">
               <div className="absolute inset-0 bg-blue-500 blur-[15px] opacity-0 group-hover:opacity-30 transition-opacity rounded-full"></div>
               <img 
-                src="https://i.pravatar.cc/100?u=htuyen220706@gmail.com" 
+                src="/avatar.jpg" 
                 alt="Avatar" 
-                className="w-10 h-10 rounded-xl border-2 border-slate-800 group-hover:border-blue-500/50 transition-all relative z-10 shadow-xl"
+                className="w-10 h-10 rounded-xl border-2 border-slate-800 group-hover:border-blue-500/50 transition-all relative z-10 shadow-xl object-cover"
               />
               <ChevronDown className="absolute -bottom-1 -right-1 w-4 h-4 text-white bg-slate-800 rounded-full p-0.5 border border-slate-700 z-20" />
             </div>
